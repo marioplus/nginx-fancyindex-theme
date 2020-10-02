@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"/>
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <!-- MDUI CSS -->
+    <link rel="stylesheet" href=/facnyindex/css/mdui.min.css"/>
+    <title>File Browser</title>
+</head>
+<body>
+<div class="mdui-drawer-body-left mdui-appbar-with-toolbar">
+    <!-- 应用栏 -->
+    <header class="mdui-appbar mdui-appbar-fixed">
+        <div class="mdui-toolbar mdui-color-theme">
+            <a href="javascript:;" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-drawer="{target:'#left-drawer'}"><i class="mdui-icon material-icons">menu</i></a>
+            <!--        <a href="javascript:;" class="mdui-typo-headline">文件管理</a>-->
+            <a href="javascript:;" class="mdui-typo-title m-appbar-title">Title</a>
+            <div class="mdui-toolbar-spacer"></div>
+            <div class="mdui-textfield mdui-textfield-expandable mdui-float-right">
+                <button class="mdui-textfield-icon mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'search'}"><i class="mdui-icon material-icons">search</i></button>
+                <input class="mdui-textfield-input m-file-search" type="text" placeholder="Search"/>
+                <button class="mdui-textfield-close mdui-btn mdui-btn-icon" mdui-tooltip="{content: 'close'}"><i class="mdui-icon material-icons">close</i></button>
+            </div>
+            <a href="javascript:;" class="mdui-btn mdui-btn-icon mdui-ripple" mdui-tooltip="{content: 'sort'}" mdui-menu="{target: '#m-menu-sort'}"><i class="mdui-icon material-icons">sort</i></a>
+            <ul class="mdui-menu" id="m-menu-sort">
+                <li class="mdui-menu-item">
+                    <a href='?C=M&O=D' class="mdui-ripple">
+                        <i class="mdui-menu-item-icon mdui-icon material-icons">date_range</i>
+                        By Date
+                    </a>
+                </li>
+                <li class="mdui-menu-item">
+                    <a href='?C=N&O=D' class="mdui-ripple">
+                        <i class="mdui-menu-item-icon mdui-icon material-icons">sort_by_alpha</i>
+                        By Name
+                    </a>
+                </li>
+                <li class="mdui-menu-item">
+                    <a href='?C=S&O=D' class="mdui-ripple">
+                        <i class="mdui-menu-item-icon mdui-icon material-icons">equalizer</i>
+                        By Size
+                    </a>
+                </li>
+            </ul>
+            <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-dialog="{target: '#dialog-docs-theme'}" mdui-tooltip="{content: 'choose theme'}"><i
+                    class="mdui-icon material-icons">color_lens</i></span>
+        </div>
+    </header>
+    <div class="mdui-drawer" id="left-drawer">
+        <div class="mdui-list">
+            <div class="mdui-list-item mdui-ripple">
+                <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-theme">cloud_queue</i>
+                <div class="mdui-list-item-content">
+                    <h2 class="mdui-list-item-title mdui-text-color-theme">Fancyindex</h2>
+                </div>
+            </div>
+        </div>
+        <div class="mdui-list m-list-index">
+            <!--
+                    <div class="mdui-list-item mdui-ripple ">
+                        <a href="/1/2/3/4">
+                            <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-theme">home</i>
+                            <span class="mdui-list-item-content mdui-text-color-theme">home</span>
+                        </a>
+                    </div>
+            -->
+        </div>
+    </div>
+    <div class="mdui-container" style="padding: 24px 0 72px">
+        <div class="m-original-fancyindex" style="display: none">
+            <h1 id="m-index-path">

@@ -25,7 +25,7 @@ class FileBrowserContext {
             if (pathStr === this.root.href) {
                 this.chain.push(this.root)
                 pathStr = ''
-                continue
+                break
             }
 
             const lastIndexOf = pathStr.substr(0, pathStr.length - 1).lastIndexOf("/")
@@ -45,7 +45,7 @@ class FileBrowserContext {
 
             let fileContext
             if (date === '-') {
-                if (linkElement.href.length <= (window.location.origin + this.root.href).length + 1) {
+                if (linkElement.href.length < (window.location.origin + this.root.href).length) {
                     return
                 }
                 fileContext = FileContext.ofGoBack('Parent', linkElement.href)
